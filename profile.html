@@ -13,8 +13,7 @@
     <div class="container nav-wrap">
       <a class="logo" href="index.html" aria-label="Voyago — главная"><span class="logo-mark">V</span> voyago</a>
       <nav class="main-nav" aria-label="Основная навигация">
-        <a href="index.html">Главная</a>
-        <a href="destinations.html">Все направления</a><a href="stays.html">Жильё</a><a href="flights.html">Авиабилеты</a><a href="cars.html">Аренда авто</a><a href="taxi.html">Такси</a><a class="active" href="profile.html">Профиль</a>
+        <a href="index.html">Главная</a><a href="stays.html">Жилищные услуги</a><a href="flights.html">Авиабилеты</a><a href="cars.html">Аренда авто</a><a href="taxi.html">Такси</a><a class="active" href="profile.html">Профиль</a>
       </nav>
       <div class="nav-actions">
         <button class="menu-btn" id="menuBtn" aria-label="Открыть меню" aria-expanded="false">☰</button>
@@ -67,6 +66,7 @@
         <section class="profile-card account-card" id="accountCard" hidden>
           <div class="account-card-top"><h2>Данные профиля</h2><span class="account-status">● Демо-аккаунт</span></div>
           <div class="account-user"><div class="profile-avatar large" id="accountAvatar">V</div><div><h3 id="accountName">Пользователь</h3><p id="accountEmail">email@example.com</p></div></div>
+          <div class="avatar-editor"><label class="avatar-upload-label" for="avatarInput">📷 Добавить / изменить аватар</label><input id="avatarInput" type="file" accept="image/*" hidden><p class="avatar-help">Изображение будет сохранено в этом браузере. Максимальный размер исходного файла — 5 МБ.</p></div>
           <div class="account-info-row"><span>Имя</span><strong id="detailsName"></strong></div>
           <div class="account-info-row"><span>Электронная почта</span><strong id="detailsEmail"></strong></div>
           <button class="auth-submit edit-profile-btn" id="editBtn" type="button">Изменить данные <span>✎</span></button>
@@ -79,8 +79,8 @@
         </section>
 
         <div class="profile-lower-grid">
-          <article class="profile-mini-card" id="saved"><div class="mini-card-icon">♡</div><h3>Сохранённые места</h3><p>Здесь будут отображаться места, которые вы захотите сохранить для будущих поездок.</p><a href="index.html#destinations">Посмотреть направления →</a></article>
-          <article class="profile-mini-card" id="trips"><div class="mini-card-icon">✈</div><h3>Мои поездки</h3><p>Когда подключим бронирование, здесь появится история ваших путешествий.</p><a href="index.html#booking">Найти поездку →</a></article>
+          <article class="profile-mini-card" id="saved"><div class="mini-card-icon">♡</div><h3>Избранное</h3><p>Сохранённые направления для будущих путешествий.</p><div id="favoritesList" class="profile-data-list"><p>Пока ничего не добавлено.</p></div><a href="index.html#destinations">Выбрать направления →</a></article>
+          <article class="profile-mini-card" id="trips"><div class="mini-card-icon">✈</div><h3>История поездок</h3><p>Ваши последние поиски поездок сохраняются в этом браузере.</p><div id="tripHistoryList" class="profile-data-list"><p>История пока пуста.</p></div><a href="index.html#booking">Найти поездку →</a></article>
         </div>
       </section>
     </div>

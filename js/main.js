@@ -1,4 +1,9 @@
 const toast = document.getElementById('toast');
+const FAVORITES_KEY = 'voyago_favorites_v1';
+const HISTORY_KEY = 'voyago_trip_history_v1';
+function readStore(key) { try { return JSON.parse(localStorage.getItem(key) || '[]'); } catch { return []; } }
+function writeStore(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); return true; } catch { return false; } }
+function saveTrip(item) { const list = readStore(HISTORY_KEY); list.unshift({...item, createdAt:new Date().toISOString()}); writeStore(HISTORY_KEY, list.slice(0,50)); }
 let toastTimer;
 
 function showToast(message) {
@@ -51,6 +56,11 @@ tabs.forEach(tab => tab.addEventListener('click', () => setTab(tab.dataset.tab))
 document.querySelectorAll('.main-nav [data-tab]').forEach(link => link.addEventListener('click', () => setTab(link.dataset.tab)));
 
 document.querySelectorAll('[data-destination]').forEach(card => {
+  const name = card.dataset.destination;
+  const fav = document.createElement('button'); fav.type='button'; fav.className='favorite-toggle'; fav.setAttribute('aria-label', `Добавить ${name} в избранное`); fav.textContent='♡';
+  const syncFav = () => { const active=readStore(FAVORITES_KEY).some(x=>x.name===name); fav.classList.toggle('is-favorite',active); fav.textContent=active?'♥':'♡'; fav.setAttribute('aria-pressed',String(active)); fav.setAttribute('aria-label', active?`Убрать ${name} из избранного`:`Добавить ${name} в избранное`); };
+  card.appendChild(fav); syncFav();
+  fav.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); let list=readStore(FAVORITES_KEY); if(list.some(x=>x.name===name)) list=list.filter(x=>x.name!==name); else list.push({name, href:card.getAttribute('href')||'#booking'}); writeStore(FAVORITES_KEY,list); syncFav(); showToast(list.some(x=>x.name===name)?`${name} добавлено в избранное.`:`${name} удалено из избранного.`); });
   card.addEventListener('click', () => {
     if (destinationInput) destinationInput.value = card.dataset.destination;
     setTab('stays');
@@ -70,7 +80,8 @@ if (searchForm) {
     const guests = document.getElementById('guests')?.value;
     const service = searchForm.dataset.service || currentTab;
     const names = { stays: 'жилья', flights: 'авиабилетов', cars: 'аренды автомобиля', taxi: 'трансфера' };
-    showToast(`Демо-поиск ${names[service] || 'поездки'}: ${destination}${dates ? ' · ' + dates : ''} · ${guests || ''}. Для реального бронирования подключите API.`);
+    saveTrip({destination, dates:dates||'', guests:guests||'', service, serviceName:names[service]||'поездки'});
+    showToast(`Поиск сохранён в истории: ${destination}${dates ? ' · ' + dates : ''}. Реальное бронирование требует подключения API.`);
   });
 }
 
@@ -93,3 +104,23 @@ document.getElementById('menuBtn')?.addEventListener('click', () => {
   document.getElementById('menuBtn').setAttribute('aria-expanded', String(isOpen));
 });
 document.querySelectorAll('.main-nav a').forEach(link => link.addEventListener('click', () => document.querySelector('.main-nav')?.classList.remove('open')));
+
+// Показываем ссылку-аватар в шапке, если пользователь вошёл в демо-профиль.
+(function setupHeaderProfile(){
+  const PROFILE_KEY='voyago_demo_profile_v1';
+  const SESSION_KEY='voyago_demo_session_v1';
+  let profile=null, session=null;
+  try { profile=JSON.parse(localStorage.getItem(PROFILE_KEY)||'null'); session=JSON.parse(sessionStorage.getItem(SESSION_KEY)||'null'); } catch {}
+  const loggedIn=!!(profile && session && session.email===profile.email);
+  const actions=document.querySelector('.nav-actions');
+  if(!actions) return;
+  const login=actions.querySelector('.login-link');
+  const register=actions.querySelector('.register-btn');
+  if(loggedIn){
+    if(login) login.hidden=true;
+    if(register && register.closest('.nav-actions')) register.hidden=true;
+    const link=document.createElement('a'); link.className='profile-header-link'; link.href='profile.html'; link.setAttribute('aria-label','Открыть профиль'); link.title='Мой профиль';
+    if(profile.avatar){const img=document.createElement('img');img.src=profile.avatar;img.alt='';link.appendChild(img);}else link.textContent=(profile.name||'V').trim().split(/\s+/).slice(0,2).map(x=>x[0]||'').join('').toUpperCase()||'V';
+    actions.appendChild(link);
+  }
+})();

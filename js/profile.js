@@ -36,6 +36,9 @@ function showLoggedOut() {
   document.getElementById('sidebarName').textContent = 'Гость Voyago';
   document.getElementById('sidebarEmail').textContent = 'Создайте профиль для удобства';
   document.getElementById('sidebarAvatar').textContent = 'V';
+  document.getElementById('sidebarAvatar').style.backgroundImage = '';
+  const headerProfileLink = document.querySelector('.profile-header-link'); if (headerProfileLink) headerProfileLink.remove();
+  const headerLogin = document.getElementById('headerLogin'); const headerRegister = document.getElementById('headerRegister'); if(headerLogin) headerLogin.hidden=false; if(headerRegister) headerRegister.hidden=false;
 }
 function showProfile(profile) {
   document.getElementById('authCard').hidden = true;
@@ -43,8 +46,12 @@ function showProfile(profile) {
   document.getElementById('logoutBtn').hidden = false;
   document.getElementById('sidebarName').textContent = profile.name;
   document.getElementById('sidebarEmail').textContent = profile.email;
-  document.getElementById('sidebarAvatar').textContent = initials(profile.name);
-  document.getElementById('accountAvatar').textContent = initials(profile.name);
+  const sidebarAvatar=document.getElementById('sidebarAvatar');
+  const accountAvatar=document.getElementById('accountAvatar');
+  [sidebarAvatar,accountAvatar].forEach(el=>{el.replaceChildren(); if(profile.avatar){const img=document.createElement('img');img.src=profile.avatar;img.alt='Аватар профиля';el.appendChild(img);}else el.textContent=initials(profile.name);});
+  const actions=document.querySelector('.nav-actions');
+  if(actions){const headerLogin=document.getElementById('headerLogin');const headerRegister=document.getElementById('headerRegister');if(headerLogin)headerLogin.hidden=true;if(headerRegister)headerRegister.hidden=true;let headerLink=actions.querySelector('.profile-header-link');if(!headerLink){headerLink=document.createElement('a');headerLink.className='profile-header-link';headerLink.href='profile.html';headerLink.setAttribute('aria-label','Открыть профиль');headerLink.title='Мой профиль';actions.appendChild(headerLink);}headerLink.replaceChildren();if(profile.avatar){const img=document.createElement('img');img.src=profile.avatar;img.alt='';headerLink.appendChild(img);}else headerLink.textContent=initials(profile.name);}
+
   document.getElementById('accountName').textContent = profile.name;
   document.getElementById('accountEmail').textContent = profile.email;
   document.getElementById('detailsName').textContent = profile.name;
@@ -133,6 +140,25 @@ document.getElementById('editForm').addEventListener('submit', event => {
   showToast('Данные демо-профиля обновлены.');
 });
 
+document.getElementById('avatarInput')?.addEventListener('change', event => {
+  const file=event.target.files && event.target.files[0]; if(!file) return;
+  if(!file.type.startsWith('image/')){showToast('Выберите файл изображения.');event.target.value='';return;}
+  if(file.size>5*1024*1024){showToast('Файл слишком большой. Выберите изображение до 5 МБ.');event.target.value='';return;}
+  const reader=new FileReader();
+  reader.onload=()=>{
+    const img=new Image();
+    img.onload=()=>{
+      const canvas=document.createElement('canvas');const max=320;const scale=Math.min(1,max/Math.max(img.width,img.height));canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));
+      canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);
+      const profile=getProfile();if(!profile){showToast('Сначала войдите в профиль.');return;}
+      profile.avatar=canvas.toDataURL('image/jpeg',0.82);
+      if(setProfile(profile)){showProfile(profile);showToast('Аватар профиля обновлён.');}
+    };
+    img.onerror=()=>showToast('Не удалось прочитать изображение. Попробуйте другой файл.');img.src=reader.result;
+  };
+  reader.onerror=()=>showToast('Не удалось загрузить файл.');reader.readAsDataURL(file);
+});
+
 document.getElementById('menuBtn')?.addEventListener('click', () => {
   const nav = document.querySelector('.main-nav');
   const isOpen = nav.classList.toggle('open');
@@ -144,3 +170,21 @@ const storedProfile = getProfile();
 const session = getSession();
 if (storedProfile && session && session.email === storedProfile.email) showProfile(storedProfile);
 else showLoggedOut();
+
+
+function renderTravelLists() {
+  const favoritesEl = document.getElementById('favoritesList');
+  const historyEl = document.getElementById('tripHistoryList');
+  const read = key => { try { return JSON.parse(localStorage.getItem(key) || '[]'); } catch { return []; } };
+  if (favoritesEl) {
+    const favorites = read('voyago_favorites_v1'); favoritesEl.replaceChildren();
+    if (!favorites.length) favoritesEl.innerHTML = '<p>Пока ничего не добавлено.</p>';
+    favorites.forEach(item => { const row=document.createElement('div'); row.className='profile-data-row'; const link=document.createElement('a'); link.href='index.html#destinations'; link.textContent=item.name; const remove=document.createElement('button'); remove.type='button'; remove.textContent='Убрать'; remove.addEventListener('click',()=>{const next=read('voyago_favorites_v1').filter(x=>x.name!==item.name);localStorage.setItem('voyago_favorites_v1',JSON.stringify(next));renderTravelLists();}); row.append(link,remove); favoritesEl.append(row); });
+  }
+  if (historyEl) {
+    const trips = read('voyago_trip_history_v1'); historyEl.replaceChildren();
+    if (!trips.length) historyEl.innerHTML = '<p>История пока пуста. Выполните поиск на сайте — он появится здесь.</p>';
+    trips.slice(0,8).forEach(item=>{const row=document.createElement('div');row.className='profile-data-row history-row';const title=document.createElement('strong');title.textContent=item.destination;const meta=document.createElement('small');const d=item.createdAt?new Date(item.createdAt).toLocaleDateString('ru-RU'):'';meta.textContent=[item.serviceName,item.dates,d].filter(Boolean).join(' · ');row.append(title,meta);historyEl.append(row);});
+  }
+}
+renderTravelLists();
