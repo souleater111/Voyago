@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Каталог стран и столиц мира от Voyago. Выберите направление для следующего путешествия."><title>Атлас путешествий — страны и столицы | Voyago</title><link rel="stylesheet" href="CSS/style.css"><script src="js/main.js" defer></script><script src="js/destinations.js" defer></script></head>
+<body class="destinations-page"><header class="site-header"><div class="container nav-wrap"><a class="logo" href="index.html" aria-label="Voyago — главная"><span class="logo-mark">V</span> voyago</a><nav class="main-nav" aria-label="Основная навигация"><a href="index.html">Главная</a><a href="destinations.html" class="active">Все направления</a><a href="stays.html">Жильё</a><a href="flights.html">Авиабилеты</a><a href="cars.html">Аренда авто</a><a href="taxi.html">Такси</a><a href="profile.html">Профиль</a></nav><div class="nav-actions"><button class="icon-btn" id="currencyBtn" aria-label="Выбрать валюту">€ EUR</button><button class="menu-btn" id="menuBtn" aria-label="Открыть меню">☰</button><a class="login-link" href="profile.html">Войти</a><a class="register-btn" href="profile.html">Регистрация</a></div></div></header>
+<main><section class="atlas-hero"><div class="atlas-overlay"></div><div class="container atlas-hero-content"><a class="back-link" href="index.html">← На главную</a><p class="eyebrow">АТЛАС ПУТЕШЕСТВИЙ VOYAGO</p><h1>Весь мир —<br>в одном месте</h1><p class="atlas-lead">Исследуйте страны, открывайте новые культуры и находите идею для следующего путешествия.</p><div class="atlas-stats"><div><strong>190+</strong><span>стран и направлений</span></div><div><strong>6</strong><span>частей света</span></div><div><strong>∞</strong><span>идей для поездок</span></div></div></div></section>
+<section class="container atlas-catalog"><div class="section-heading"><div><p class="eyebrow dark">ВЫБИРАЙТЕ СВОЁ НАПРАВЛЕНИЕ</p><h2>Страны и столицы мира</h2><p class="section-description">Найдите страну по названию, столице или региону.</p></div></div><div class="atlas-controls"><label class="atlas-search"><span>⌕</span><input id="countrySearch" type="search" placeholder="Например, Япония, Токио или Европа" autocomplete="off"></label><label class="atlas-filter-label"><span>Регион</span><select id="regionFilter"><option value="all">Весь мир</option><option>Европа</option><option>Азия</option><option>Африка</option><option>Северная Америка</option><option>Южная Америка</option><option>Океания</option></select></label></div><div class="atlas-result-line"><span id="countryCount">193 стран в каталоге</span><button type="button" id="clearCountryFilters" class="atlas-clear">Сбросить фильтры</button></div><div class="country-grid" id="countryGrid"><article class="country-card" data-region="Европа" data-search="албания тирана европа">
+      <span class="country-card-flag" aria-hidden="true">🇦🇱</span><div class="country-card-copy"><h2>Албания</h2><p>Столица: <strong>Тирана</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="андорра андорра-ла-велья европа">
+      <span class="country-card-flag" aria-hidden="true">🇦🇩</span><div class="country-card-copy"><h2>Андорра</h2><p>Столица: <strong>Андорра-ла-Велья</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="австрия вена европа">
+      <span class="country-card-flag" aria-hidden="true">🇦🇹</span><div class="country-card-copy"><h2>Австрия</h2><p>Столица: <strong>Вена</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="беларусь минск европа">
+      <span class="country-card-flag" aria-hidden="true">🇧🇾</span><div class="country-card-copy"><h2>Беларусь</h2><p>Столица: <strong>Минск</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="бельгия брюссель европа">
+      <span class="country-card-flag" aria-hidden="true">🇧🇪</span><div class="country-card-copy"><h2>Бельгия</h2><p>Столица: <strong>Брюссель</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="босния и герцеговина сараево европа">
+      <span class="country-card-flag" aria-hidden="true">🇧🇦</span><div class="country-card-copy"><h2>Босния и Герцеговина</h2><p>Столица: <strong>Сараево</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="болгария софия европа">
+      <span class="country-card-flag" aria-hidden="true">🇧🇬</span><div class="country-card-copy"><h2>Болгария</h2><p>Столица: <strong>София</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="хорватия загреб европа">
+      <span class="country-card-flag" aria-hidden="true">🇭🇷</span><div class="country-card-copy"><h2>Хорватия</h2><p>Столица: <strong>Загреб</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="кипр никосия европа">
+      <span class="country-card-flag" aria-hidden="true">🇨🇾</span><div class="country-card-copy"><h2>Кипр</h2><p>Столица: <strong>Никосия</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="чехия прага европа">
+      <span class="country-card-flag" aria-hidden="true">🇨🇿</span><div class="country-card-copy"><h2>Чехия</h2><p>Столица: <strong>Прага</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="дания копенгаген европа">
+      <span class="country-card-flag" aria-hidden="true">🇩🇰</span><div class="country-card-copy"><h2>Дания</h2><p>Столица: <strong>Копенгаген</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="эстония таллин европа">
+      <span class="country-card-flag" aria-hidden="true">🇪🇪</span><div class="country-card-copy"><h2>Эстония</h2><p>Столица: <strong>Таллин</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="финляндия хельсинки европа">
+      <span class="country-card-flag" aria-hidden="true">🇫🇮</span><div class="country-card-copy"><h2>Финляндия</h2><p>Столица: <strong>Хельсинки</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="франция париж европа">
+      <span class="country-card-flag" aria-hidden="true">🇫🇷</span><div class="country-card-copy"><h2>Франция</h2><p>Столица: <strong>Париж</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="германия берлин европа">
+      <span class="country-card-flag" aria-hidden="true">🇩🇪</span><div class="country-card-copy"><h2>Германия</h2><p>Столица: <strong>Берлин</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="греция афины европа">
+      <span class="country-card-flag" aria-hidden="true">🇬🇷</span><div class="country-card-copy"><h2>Греция</h2><p>Столица: <strong>Афины</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="венгрия будапешт европа">
+      <span class="country-card-flag" aria-hidden="true">🇭🇺</span><div class="country-card-copy"><h2>Венгрия</h2><p>Столица: <strong>Будапешт</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="исландия рейкьявик европа">
+      <span class="country-card-flag" aria-hidden="true">🇮🇸</span><div class="country-card-copy"><h2>Исландия</h2><p>Столица: <strong>Рейкьявик</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="ирландия дублин европа">
+      <span class="country-card-flag" aria-hidden="true">🇮🇪</span><div class="country-card-copy"><h2>Ирландия</h2><p>Столица: <strong>Дублин</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="италия рим европа">
+      <span class="country-card-flag" aria-hidden="true">🇮🇹</span><div class="country-card-copy"><h2>Италия</h2><p>Столица: <strong>Рим</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="косово приштина европа">
+      <span class="country-card-flag" aria-hidden="true">🇽🇰</span><div class="country-card-copy"><h2>Косово</h2><p>Столица: <strong>Приштина</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="латвия рига европа">
+      <span class="country-card-flag" aria-hidden="true">🇱🇻</span><div class="country-card-copy"><h2>Латвия</h2><p>Столица: <strong>Рига</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="лихтенштейн вадуц европа">
+      <span class="country-card-flag" aria-hidden="true">🇱🇮</span><div class="country-card-copy"><h2>Лихтенштейн</h2><p>Столица: <strong>Вадуц</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="литва вильнюс европа">
+      <span class="country-card-flag" aria-hidden="true">🇱🇹</span><div class="country-card-copy"><h2>Литва</h2><p>Столица: <strong>Вильнюс</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="люксембург люксембург европа">
+      <span class="country-card-flag" aria-hidden="true">🇱🇺</span><div class="country-card-copy"><h2>Люксембург</h2><p>Столица: <strong>Люксембург</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="мальта валлетта европа">
+      <span class="country-card-flag" aria-hidden="true">🇲🇹</span><div class="country-card-copy"><h2>Мальта</h2><p>Столица: <strong>Валлетта</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="молдова кишинёв европа">
+      <span class="country-card-flag" aria-hidden="true">🇲🇩</span><div class="country-card-copy"><h2>Молдова</h2><p>Столица: <strong>Кишинёв</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="монако монако европа">
+      <span class="country-card-flag" aria-hidden="true">🇲🇨</span><div class="country-card-copy"><h2>Монако</h2><p>Столица: <strong>Монако</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="черногория подгорица европа">
+      <span class="country-card-flag" aria-hidden="true">🇲🇪</span><div class="country-card-copy"><h2>Черногория</h2><p>Столица: <strong>Подгорица</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="нидерланды амстердам европа">
+      <span class="country-card-flag" aria-hidden="true">🇳🇱</span><div class="country-card-copy"><h2>Нидерланды</h2><p>Столица: <strong>Амстердам</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="северная македония скопье европа">
+      <span class="country-card-flag" aria-hidden="true">🇲🇰</span><div class="country-card-copy"><h2>Северная Македония</h2><p>Столица: <strong>Скопье</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="норвегия осло европа">
+      <span class="country-card-flag" aria-hidden="true">🇳🇴</span><div class="country-card-copy"><h2>Норвегия</h2><p>Столица: <strong>Осло</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="польша варшава европа">
+      <span class="country-card-flag" aria-hidden="true">🇵🇱</span><div class="country-card-copy"><h2>Польша</h2><p>Столица: <strong>Варшава</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="португалия лиссабон европа">
+      <span class="country-card-flag" aria-hidden="true">🇵🇹</span><div class="country-card-copy"><h2>Португалия</h2><p>Столица: <strong>Лиссабон</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="румыния бухарест европа">
+      <span class="country-card-flag" aria-hidden="true">🇷🇴</span><div class="country-card-copy"><h2>Румыния</h2><p>Столица: <strong>Бухарест</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа / Азия" data-search="россия москва европа / азия">
+      <span class="country-card-flag" aria-hidden="true">🇷🇺</span><div class="country-card-copy"><h2>Россия</h2><p>Столица: <strong>Москва</strong></p><span class="country-region">Европа / Азия</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="сан-марино сан-марино европа">
+      <span class="country-card-flag" aria-hidden="true">🇸🇲</span><div class="country-card-copy"><h2>Сан-Марино</h2><p>Столица: <strong>Сан-Марино</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="сербия белград европа">
+      <span class="country-card-flag" aria-hidden="true">🇷🇸</span><div class="country-card-copy"><h2>Сербия</h2><p>Столица: <strong>Белград</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="словакия братислава европа">
+      <span class="country-card-flag" aria-hidden="true">🇸🇰</span><div class="country-card-copy"><h2>Словакия</h2><p>Столица: <strong>Братислава</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="словения любляна европа">
+      <span class="country-card-flag" aria-hidden="true">🇸🇮</span><div class="country-card-copy"><h2>Словения</h2><p>Столица: <strong>Любляна</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="испания мадрид европа">
+      <span class="country-card-flag" aria-hidden="true">🇪🇸</span><div class="country-card-copy"><h2>Испания</h2><p>Столица: <strong>Мадрид</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="швеция стокгольм европа">
+      <span class="country-card-flag" aria-hidden="true">🇸🇪</span><div class="country-card-copy"><h2>Швеция</h2><p>Столица: <strong>Стокгольм</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="швейцария берн европа">
+      <span class="country-card-flag" aria-hidden="true">🇨🇭</span><div class="country-card-copy"><h2>Швейцария</h2><p>Столица: <strong>Берн</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа / Азия" data-search="турция анкара европа / азия">
+      <span class="country-card-flag" aria-hidden="true">🇹🇷</span><div class="country-card-copy"><h2>Турция</h2><p>Столица: <strong>Анкара</strong></p><span class="country-region">Европа / Азия</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="украина киев европа">
+      <span class="country-card-flag" aria-hidden="true">🇺🇦</span><div class="country-card-copy"><h2>Украина</h2><p>Столица: <strong>Киев</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Европа" data-search="великобритания лондон европа">
+      <span class="country-card-flag" aria-hidden="true">🇬🇧</span><div class="country-card-copy"><h2>Великобритания</h2><p>Столица: <strong>Лондон</strong></p><span class="country-region">Европа</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="афганистан кабул азия">
+      <span class="country-card-flag" aria-hidden="true">🇦🇫</span><div class="country-card-copy"><h2>Афганистан</h2><p>Столица: <strong>Кабул</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="армения ереван азия">
+      <span class="country-card-flag" aria-hidden="true">🇦🇲</span><div class="country-card-copy"><h2>Армения</h2><p>Столица: <strong>Ереван</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="азербайджан баку азия">
+      <span class="country-card-flag" aria-hidden="true">🇦🇿</span><div class="country-card-copy"><h2>Азербайджан</h2><p>Столица: <strong>Баку</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="бахрейн манама азия">
+      <span class="country-card-flag" aria-hidden="true">🇧🇭</span><div class="country-card-copy"><h2>Бахрейн</h2><p>Столица: <strong>Манама</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="бангладеш дакка азия">
+      <span class="country-card-flag" aria-hidden="true">🇧🇩</span><div class="country-card-copy"><h2>Бангладеш</h2><p>Столица: <strong>Дакка</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="бутан тхимпху азия">
+      <span class="country-card-flag" aria-hidden="true">🇧🇹</span><div class="country-card-copy"><h2>Бутан</h2><p>Столица: <strong>Тхимпху</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="бруней бандар-сери-бегаван азия">
+      <span class="country-card-flag" aria-hidden="true">🇧🇳</span><div class="country-card-copy"><h2>Бруней</h2><p>Столица: <strong>Бандар-Сери-Бегаван</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="камбоджа пномпень азия">
+      <span class="country-card-flag" aria-hidden="true">🇰🇭</span><div class="country-card-copy"><h2>Камбоджа</h2><p>Столица: <strong>Пномпень</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="китай пекин азия">
+      <span class="country-card-flag" aria-hidden="true">🇨🇳</span><div class="country-card-copy"><h2>Китай</h2><p>Столица: <strong>Пекин</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="грузия тбилиси азия">
+      <span class="country-card-flag" aria-hidden="true">🇬🇪</span><div class="country-card-copy"><h2>Грузия</h2><p>Столица: <strong>Тбилиси</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="индия нью-дели азия">
+      <span class="country-card-flag" aria-hidden="true">🇮🇳</span><div class="country-card-copy"><h2>Индия</h2><p>Столица: <strong>Нью-Дели</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="индонезия джакарта азия">
+      <span class="country-card-flag" aria-hidden="true">🇮🇩</span><div class="country-card-copy"><h2>Индонезия</h2><p>Столица: <strong>Джакарта</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="иран тегеран азия">
+      <span class="country-card-flag" aria-hidden="true">🇮🇷</span><div class="country-card-copy"><h2>Иран</h2><p>Столица: <strong>Тегеран</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="ирак багдад азия">
+      <span class="country-card-flag" aria-hidden="true">🇮🇶</span><div class="country-card-copy"><h2>Ирак</h2><p>Столица: <strong>Багдад</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="израиль иерусалим азия">
+      <span class="country-card-flag" aria-hidden="true">🇮🇱</span><div class="country-card-copy"><h2>Израиль</h2><p>Столица: <strong>Иерусалим</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="япония токио азия">
+      <span class="country-card-flag" aria-hidden="true">🇯🇵</span><div class="country-card-copy"><h2>Япония</h2><p>Столица: <strong>Токио</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="иордания амман азия">
+      <span class="country-card-flag" aria-hidden="true">🇯🇴</span><div class="country-card-copy"><h2>Иордания</h2><p>Столица: <strong>Амман</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="казахстан астана азия">
+      <span class="country-card-flag" aria-hidden="true">🇰🇿</span><div class="country-card-copy"><h2>Казахстан</h2><p>Столица: <strong>Астана</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="кувейт эль-кувейт азия">
+      <span class="country-card-flag" aria-hidden="true">🇰🇼</span><div class="country-card-copy"><h2>Кувейт</h2><p>Столица: <strong>Эль-Кувейт</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="кыргызстан бишкек азия">
+      <span class="country-card-flag" aria-hidden="true">🇰🇬</span><div class="country-card-copy"><h2>Кыргызстан</h2><p>Столица: <strong>Бишкек</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="лаос вьентьян азия">
+      <span class="country-card-flag" aria-hidden="true">🇱🇦</span><div class="country-card-copy"><h2>Лаос</h2><p>Столица: <strong>Вьентьян</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="ливан бейрут азия">
+      <span class="country-card-flag" aria-hidden="true">🇱🇧</span><div class="country-card-copy"><h2>Ливан</h2><p>Столица: <strong>Бейрут</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="малайзия куала-лумпур азия">
+      <span class="country-card-flag" aria-hidden="true">🇲🇾</span><div class="country-card-copy"><h2>Малайзия</h2><p>Столица: <strong>Куала-Лумпур</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="мальдивы мале азия">
+      <span class="country-card-flag" aria-hidden="true">🇲🇻</span><div class="country-card-copy"><h2>Мальдивы</h2><p>Столица: <strong>Мале</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="монголия улан-батор азия">
+      <span class="country-card-flag" aria-hidden="true">🇲🇳</span><div class="country-card-copy"><h2>Монголия</h2><p>Столица: <strong>Улан-Батор</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="мьянма нейпьидо азия">
+      <span class="country-card-flag" aria-hidden="true">🇲🇲</span><div class="country-card-copy"><h2>Мьянма</h2><p>Столица: <strong>Нейпьидо</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="непал катманду азия">
+      <span class="country-card-flag" aria-hidden="true">🇳🇵</span><div class="country-card-copy"><h2>Непал</h2><p>Столица: <strong>Катманду</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="кндр пхеньян азия">
+      <span class="country-card-flag" aria-hidden="true">🇰🇵</span><div class="country-card-copy"><h2>КНДР</h2><p>Столица: <strong>Пхеньян</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="оман маскат азия">
+      <span class="country-card-flag" aria-hidden="true">🇴🇲</span><div class="country-card-copy"><h2>Оман</h2><p>Столица: <strong>Маскат</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="пакистан исламабад азия">
+      <span class="country-card-flag" aria-hidden="true">🇵🇰</span><div class="country-card-copy"><h2>Пакистан</h2><p>Столица: <strong>Исламабад</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="палестина восточный иерусалим* азия">
+      <span class="country-card-flag" aria-hidden="true">🇵🇸</span><div class="country-card-copy"><h2>Палестина</h2><p>Столица: <strong>Восточный Иерусалим*</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="филиппины манила азия">
+      <span class="country-card-flag" aria-hidden="true">🇵🇭</span><div class="country-card-copy"><h2>Филиппины</h2><p>Столица: <strong>Манила</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="катар доха азия">
+      <span class="country-card-flag" aria-hidden="true">🇶🇦</span><div class="country-card-copy"><h2>Катар</h2><p>Столица: <strong>Доха</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="саудовская аравия эр-рияд азия">
+      <span class="country-card-flag" aria-hidden="true">🇸🇦</span><div class="country-card-copy"><h2>Саудовская Аравия</h2><p>Столица: <strong>Эр-Рияд</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="сингапур сингапур азия">
+      <span class="country-card-flag" aria-hidden="true">🇸🇬</span><div class="country-card-copy"><h2>Сингапур</h2><p>Столица: <strong>Сингапур</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="южная корея сеул азия">
+      <span class="country-card-flag" aria-hidden="true">🇰🇷</span><div class="country-card-copy"><h2>Южная Корея</h2><p>Столица: <strong>Сеул</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="шри-ланка шри-джаяварденепура-котте азия">
+      <span class="country-card-flag" aria-hidden="true">🇱🇰</span><div class="country-card-copy"><h2>Шри-Ланка</h2><p>Столица: <strong>Шри-Джаяварденепура-Котте</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="сирия дамаск азия">
+      <span class="country-card-flag" aria-hidden="true">🇸🇾</span><div class="country-card-copy"><h2>Сирия</h2><p>Столица: <strong>Дамаск</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="тайвань тайбэй азия">
+      <span class="country-card-flag" aria-hidden="true">🇹🇼</span><div class="country-card-copy"><h2>Тайвань</h2><p>Столица: <strong>Тайбэй</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="таджикистан душанбе азия">
+      <span class="country-card-flag" aria-hidden="true">🇹🇯</span><div class="country-card-copy"><h2>Таджикистан</h2><p>Столица: <strong>Душанбе</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="таиланд бангкок азия">
+      <span class="country-card-flag" aria-hidden="true">🇹🇭</span><div class="country-card-copy"><h2>Таиланд</h2><p>Столица: <strong>Бангкок</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="восточный тимор дили азия">
+      <span class="country-card-flag" aria-hidden="true">🇹🇱</span><div class="country-card-copy"><h2>Восточный Тимор</h2><p>Столица: <strong>Дили</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="туркменистан ашхабад азия">
+      <span class="country-card-flag" aria-hidden="true">🇹🇲</span><div class="country-card-copy"><h2>Туркменистан</h2><p>Столица: <strong>Ашхабад</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="оаэ абу-даби азия">
+      <span class="country-card-flag" aria-hidden="true">🇦🇪</span><div class="country-card-copy"><h2>ОАЭ</h2><p>Столица: <strong>Абу-Даби</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="узбекистан ташкент азия">
+      <span class="country-card-flag" aria-hidden="true">🇺🇿</span><div class="country-card-copy"><h2>Узбекистан</h2><p>Столица: <strong>Ташкент</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="вьетнам ханой азия">
+      <span class="country-card-flag" aria-hidden="true">🇻🇳</span><div class="country-card-copy"><h2>Вьетнам</h2><p>Столица: <strong>Ханой</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Азия" data-search="йемен сана азия">
+      <span class="country-card-flag" aria-hidden="true">🇾🇪</span><div class="country-card-copy"><h2>Йемен</h2><p>Столица: <strong>Сана</strong></p><span class="country-region">Азия</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="алжир алжир африка">
+      <span class="country-card-flag" aria-hidden="true">🇩🇿</span><div class="country-card-copy"><h2>Алжир</h2><p>Столица: <strong>Алжир</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="ангола луанда африка">
+      <span class="country-card-flag" aria-hidden="true">🇦🇴</span><div class="country-card-copy"><h2>Ангола</h2><p>Столица: <strong>Луанда</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="бенин порто-ново африка">
+      <span class="country-card-flag" aria-hidden="true">🇧🇯</span><div class="country-card-copy"><h2>Бенин</h2><p>Столица: <strong>Порто-Ново</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="ботсвана габороне африка">
+      <span class="country-card-flag" aria-hidden="true">🇧🇼</span><div class="country-card-copy"><h2>Ботсвана</h2><p>Столица: <strong>Габороне</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="буркина-фасо уагадугу африка">
+      <span class="country-card-flag" aria-hidden="true">🇧🇫</span><div class="country-card-copy"><h2>Буркина-Фасо</h2><p>Столица: <strong>Уагадугу</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="бурунди гитега африка">
+      <span class="country-card-flag" aria-hidden="true">🇧🇮</span><div class="country-card-copy"><h2>Бурунди</h2><p>Столица: <strong>Гитега</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="камерун яунде африка">
+      <span class="country-card-flag" aria-hidden="true">🇨🇲</span><div class="country-card-copy"><h2>Камерун</h2><p>Столица: <strong>Яунде</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="кабо-верде прая африка">
+      <span class="country-card-flag" aria-hidden="true">🇨🇻</span><div class="country-card-copy"><h2>Кабо-Верде</h2><p>Столица: <strong>Прая</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="цар банги африка">
+      <span class="country-card-flag" aria-hidden="true">🇨🇫</span><div class="country-card-copy"><h2>ЦАР</h2><p>Столица: <strong>Банги</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="чад нджамена африка">
+      <span class="country-card-flag" aria-hidden="true">🇹🇩</span><div class="country-card-copy"><h2>Чад</h2><p>Столица: <strong>Нджамена</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="коморы морони африка">
+      <span class="country-card-flag" aria-hidden="true">🇰🇲</span><div class="country-card-copy"><h2>Коморы</h2><p>Столица: <strong>Морони</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="республика конго браззавиль африка">
+      <span class="country-card-flag" aria-hidden="true">🇨🇬</span><div class="country-card-copy"><h2>Республика Конго</h2><p>Столица: <strong>Браззавиль</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="др конго киншаса африка">
+      <span class="country-card-flag" aria-hidden="true">🇨🇩</span><div class="country-card-copy"><h2>ДР Конго</h2><p>Столица: <strong>Киншаса</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="кот-д’ивуар ямусукро африка">
+      <span class="country-card-flag" aria-hidden="true">🇨🇮</span><div class="country-card-copy"><h2>Кот-д’Ивуар</h2><p>Столица: <strong>Ямусукро</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="джибути джибути африка">
+      <span class="country-card-flag" aria-hidden="true">🇩🇯</span><div class="country-card-copy"><h2>Джибути</h2><p>Столица: <strong>Джибути</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="египет каир африка">
+      <span class="country-card-flag" aria-hidden="true">🇪🇬</span><div class="country-card-copy"><h2>Египет</h2><p>Столица: <strong>Каир</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="экваториальная гвинея малабо африка">
+      <span class="country-card-flag" aria-hidden="true">🇬🇶</span><div class="country-card-copy"><h2>Экваториальная Гвинея</h2><p>Столица: <strong>Малабо</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="эритрея асмэра африка">
+      <span class="country-card-flag" aria-hidden="true">🇪🇷</span><div class="country-card-copy"><h2>Эритрея</h2><p>Столица: <strong>Асмэра</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="эсватини мбабане африка">
+      <span class="country-card-flag" aria-hidden="true">🇸🇿</span><div class="country-card-copy"><h2>Эсватини</h2><p>Столица: <strong>Мбабане</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="эфиопия аддис-абеба африка">
+      <span class="country-card-flag" aria-hidden="true">🇪🇹</span><div class="country-card-copy"><h2>Эфиопия</h2><p>Столица: <strong>Аддис-Абеба</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="габон либревиль африка">
+      <span class="country-card-flag" aria-hidden="true">🇬🇦</span><div class="country-card-copy"><h2>Габон</h2><p>Столица: <strong>Либревиль</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="гамбия банжул африка">
+      <span class="country-card-flag" aria-hidden="true">🇬🇲</span><div class="country-card-copy"><h2>Гамбия</h2><p>Столица: <strong>Банжул</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="гана аккра африка">
+      <span class="country-card-flag" aria-hidden="true">🇬🇭</span><div class="country-card-copy"><h2>Гана</h2><p>Столица: <strong>Аккра</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="гвинея конакри африка">
+      <span class="country-card-flag" aria-hidden="true">🇬🇳</span><div class="country-card-copy"><h2>Гвинея</h2><p>Столица: <strong>Конакри</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="гвинея-бисау бисау африка">
+      <span class="country-card-flag" aria-hidden="true">🇬🇼</span><div class="country-card-copy"><h2>Гвинея-Бисау</h2><p>Столица: <strong>Бисау</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="кения найроби африка">
+      <span class="country-card-flag" aria-hidden="true">🇰🇪</span><div class="country-card-copy"><h2>Кения</h2><p>Столица: <strong>Найроби</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="лесото масеру африка">
+      <span class="country-card-flag" aria-hidden="true">🇱🇸</span><div class="country-card-copy"><h2>Лесото</h2><p>Столица: <strong>Масеру</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="либерия монровия африка">
+      <span class="country-card-flag" aria-hidden="true">🇱🇷</span><div class="country-card-copy"><h2>Либерия</h2><p>Столица: <strong>Монровия</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="ливия триполи африка">
+      <span class="country-card-flag" aria-hidden="true">🇱🇾</span><div class="country-card-copy"><h2>Ливия</h2><p>Столица: <strong>Триполи</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="мадагаскар антананариву африка">
+      <span class="country-card-flag" aria-hidden="true">🇲🇬</span><div class="country-card-copy"><h2>Мадагаскар</h2><p>Столица: <strong>Антананариву</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="малави лилонгве африка">
+      <span class="country-card-flag" aria-hidden="true">🇲🇼</span><div class="country-card-copy"><h2>Малави</h2><p>Столица: <strong>Лилонгве</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="мали бамако африка">
+      <span class="country-card-flag" aria-hidden="true">🇲🇱</span><div class="country-card-copy"><h2>Мали</h2><p>Столица: <strong>Бамако</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="мавритания нуакшот африка">
+      <span class="country-card-flag" aria-hidden="true">🇲🇷</span><div class="country-card-copy"><h2>Мавритания</h2><p>Столица: <strong>Нуакшот</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="маврикий порт-луи африка">
+      <span class="country-card-flag" aria-hidden="true">🇲🇺</span><div class="country-card-copy"><h2>Маврикий</h2><p>Столица: <strong>Порт-Луи</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="марокко рабат африка">
+      <span class="country-card-flag" aria-hidden="true">🇲🇦</span><div class="country-card-copy"><h2>Марокко</h2><p>Столица: <strong>Рабат</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="мозамбик мапуту африка">
+      <span class="country-card-flag" aria-hidden="true">🇲🇿</span><div class="country-card-copy"><h2>Мозамбик</h2><p>Столица: <strong>Мапуту</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="намибия виндхук африка">
+      <span class="country-card-flag" aria-hidden="true">🇳🇦</span><div class="country-card-copy"><h2>Намибия</h2><p>Столица: <strong>Виндхук</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="нигер ниамей африка">
+      <span class="country-card-flag" aria-hidden="true">🇳🇪</span><div class="country-card-copy"><h2>Нигер</h2><p>Столица: <strong>Ниамей</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="нигерия абуджа африка">
+      <span class="country-card-flag" aria-hidden="true">🇳🇬</span><div class="country-card-copy"><h2>Нигерия</h2><p>Столица: <strong>Абуджа</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="руанда кигали африка">
+      <span class="country-card-flag" aria-hidden="true">🇷🇼</span><div class="country-card-copy"><h2>Руанда</h2><p>Столица: <strong>Кигали</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="сенегал дакар африка">
+      <span class="country-card-flag" aria-hidden="true">🇸🇳</span><div class="country-card-copy"><h2>Сенегал</h2><p>Столица: <strong>Дакар</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="сейшелы виктория африка">
+      <span class="country-card-flag" aria-hidden="true">🇸🇨</span><div class="country-card-copy"><h2>Сейшелы</h2><p>Столица: <strong>Виктория</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="сьерра-леоне фритаун африка">
+      <span class="country-card-flag" aria-hidden="true">🇸🇱</span><div class="country-card-copy"><h2>Сьерра-Леоне</h2><p>Столица: <strong>Фритаун</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="сомали могадишо африка">
+      <span class="country-card-flag" aria-hidden="true">🇸🇴</span><div class="country-card-copy"><h2>Сомали</h2><p>Столица: <strong>Могадишо</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="юар претория африка">
+      <span class="country-card-flag" aria-hidden="true">🇿🇦</span><div class="country-card-copy"><h2>ЮАР</h2><p>Столица: <strong>Претория</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="южный судан джуба африка">
+      <span class="country-card-flag" aria-hidden="true">🇸🇸</span><div class="country-card-copy"><h2>Южный Судан</h2><p>Столица: <strong>Джуба</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="судан хартум африка">
+      <span class="country-card-flag" aria-hidden="true">🇸🇩</span><div class="country-card-copy"><h2>Судан</h2><p>Столица: <strong>Хартум</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="танзания додома африка">
+      <span class="country-card-flag" aria-hidden="true">🇹🇿</span><div class="country-card-copy"><h2>Танзания</h2><p>Столица: <strong>Додома</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="того ломе африка">
+      <span class="country-card-flag" aria-hidden="true">🇹🇬</span><div class="country-card-copy"><h2>Того</h2><p>Столица: <strong>Ломе</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="тунис тунис африка">
+      <span class="country-card-flag" aria-hidden="true">🇹🇳</span><div class="country-card-copy"><h2>Тунис</h2><p>Столица: <strong>Тунис</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="уганда кампала африка">
+      <span class="country-card-flag" aria-hidden="true">🇺🇬</span><div class="country-card-copy"><h2>Уганда</h2><p>Столица: <strong>Кампала</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="замбия лусака африка">
+      <span class="country-card-flag" aria-hidden="true">🇿🇲</span><div class="country-card-copy"><h2>Замбия</h2><p>Столица: <strong>Лусака</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Африка" data-search="зимбабве хараре африка">
+      <span class="country-card-flag" aria-hidden="true">🇿🇼</span><div class="country-card-copy"><h2>Зимбабве</h2><p>Столица: <strong>Хараре</strong></p><span class="country-region">Африка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="антигуа и барбуда сент-джонс северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇦🇬</span><div class="country-card-copy"><h2>Антигуа и Барбуда</h2><p>Столица: <strong>Сент-Джонс</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="багамы нассау северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇧🇸</span><div class="country-card-copy"><h2>Багамы</h2><p>Столица: <strong>Нассау</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="барбадос бриджтаун северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇧🇧</span><div class="country-card-copy"><h2>Барбадос</h2><p>Столица: <strong>Бриджтаун</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="белиз бельмопан северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇧🇿</span><div class="country-card-copy"><h2>Белиз</h2><p>Столица: <strong>Бельмопан</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="канада оттава северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇨🇦</span><div class="country-card-copy"><h2>Канада</h2><p>Столица: <strong>Оттава</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="коста-рика сан-хосе северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇨🇷</span><div class="country-card-copy"><h2>Коста-Рика</h2><p>Столица: <strong>Сан-Хосе</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="куба гавана северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇨🇺</span><div class="country-card-copy"><h2>Куба</h2><p>Столица: <strong>Гавана</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="доминика розо северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇩🇲</span><div class="country-card-copy"><h2>Доминика</h2><p>Столица: <strong>Розо</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="доминиканская республика санто-доминго северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇩🇴</span><div class="country-card-copy"><h2>Доминиканская Республика</h2><p>Столица: <strong>Санто-Доминго</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="сальвадор сан-сальвадор северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇸🇻</span><div class="country-card-copy"><h2>Сальвадор</h2><p>Столица: <strong>Сан-Сальвадор</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="гренада сент-джорджес северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇬🇩</span><div class="country-card-copy"><h2>Гренада</h2><p>Столица: <strong>Сент-Джорджес</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="гватемала гватемала северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇬🇹</span><div class="country-card-copy"><h2>Гватемала</h2><p>Столица: <strong>Гватемала</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="гаити порт-о-пренс северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇭🇹</span><div class="country-card-copy"><h2>Гаити</h2><p>Столица: <strong>Порт-о-Пренс</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="гондурас тегусигальпа северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇭🇳</span><div class="country-card-copy"><h2>Гондурас</h2><p>Столица: <strong>Тегусигальпа</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="ямайка кингстон северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇯🇲</span><div class="country-card-copy"><h2>Ямайка</h2><p>Столица: <strong>Кингстон</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="мексика мехико северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇲🇽</span><div class="country-card-copy"><h2>Мексика</h2><p>Столица: <strong>Мехико</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="никарагуа манагуа северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇳🇮</span><div class="country-card-copy"><h2>Никарагуа</h2><p>Столица: <strong>Манагуа</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="панама панама северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇵🇦</span><div class="country-card-copy"><h2>Панама</h2><p>Столица: <strong>Панама</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="сент-люсия кастри северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇱🇨</span><div class="country-card-copy"><h2>Сент-Люсия</h2><p>Столица: <strong>Кастри</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="тринидад и тобаго порт-оф-спейн северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇹🇹</span><div class="country-card-copy"><h2>Тринидад и Тобаго</h2><p>Столица: <strong>Порт-оф-Спейн</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Северная Америка" data-search="сша вашингтон северная америка">
+      <span class="country-card-flag" aria-hidden="true">🇺🇸</span><div class="country-card-copy"><h2>США</h2><p>Столица: <strong>Вашингтон</strong></p><span class="country-region">Северная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Южная Америка" data-search="аргентина буэнос-айрес южная америка">
+      <span class="country-card-flag" aria-hidden="true">🇦🇷</span><div class="country-card-copy"><h2>Аргентина</h2><p>Столица: <strong>Буэнос-Айрес</strong></p><span class="country-region">Южная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Южная Америка" data-search="боливия сукре южная америка">
+      <span class="country-card-flag" aria-hidden="true">🇧🇴</span><div class="country-card-copy"><h2>Боливия</h2><p>Столица: <strong>Сукре</strong></p><span class="country-region">Южная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Южная Америка" data-search="бразилия бразилиа южная америка">
+      <span class="country-card-flag" aria-hidden="true">🇧🇷</span><div class="country-card-copy"><h2>Бразилия</h2><p>Столица: <strong>Бразилиа</strong></p><span class="country-region">Южная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Южная Америка" data-search="чили сантьяго южная америка">
+      <span class="country-card-flag" aria-hidden="true">🇨🇱</span><div class="country-card-copy"><h2>Чили</h2><p>Столица: <strong>Сантьяго</strong></p><span class="country-region">Южная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Южная Америка" data-search="колумбия богота южная америка">
+      <span class="country-card-flag" aria-hidden="true">🇨🇴</span><div class="country-card-copy"><h2>Колумбия</h2><p>Столица: <strong>Богота</strong></p><span class="country-region">Южная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Южная Америка" data-search="эквадор кито южная америка">
+      <span class="country-card-flag" aria-hidden="true">🇪🇨</span><div class="country-card-copy"><h2>Эквадор</h2><p>Столица: <strong>Кито</strong></p><span class="country-region">Южная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Южная Америка" data-search="гайана джорджтаун южная америка">
+      <span class="country-card-flag" aria-hidden="true">🇬🇾</span><div class="country-card-copy"><h2>Гайана</h2><p>Столица: <strong>Джорджтаун</strong></p><span class="country-region">Южная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Южная Америка" data-search="парагвай асунсьон южная америка">
+      <span class="country-card-flag" aria-hidden="true">🇵🇾</span><div class="country-card-copy"><h2>Парагвай</h2><p>Столица: <strong>Асунсьон</strong></p><span class="country-region">Южная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Южная Америка" data-search="перу лима южная америка">
+      <span class="country-card-flag" aria-hidden="true">🇵🇪</span><div class="country-card-copy"><h2>Перу</h2><p>Столица: <strong>Лима</strong></p><span class="country-region">Южная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Южная Америка" data-search="суринам парамарибо южная америка">
+      <span class="country-card-flag" aria-hidden="true">🇸🇷</span><div class="country-card-copy"><h2>Суринам</h2><p>Столица: <strong>Парамарибо</strong></p><span class="country-region">Южная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Южная Америка" data-search="уругвай монтевидео южная америка">
+      <span class="country-card-flag" aria-hidden="true">🇺🇾</span><div class="country-card-copy"><h2>Уругвай</h2><p>Столица: <strong>Монтевидео</strong></p><span class="country-region">Южная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Южная Америка" data-search="венесуэла каракас южная америка">
+      <span class="country-card-flag" aria-hidden="true">🇻🇪</span><div class="country-card-copy"><h2>Венесуэла</h2><p>Столица: <strong>Каракас</strong></p><span class="country-region">Южная Америка</span></div>
+    </article>
+<article class="country-card" data-region="Океания" data-search="австралия канберра океания">
+      <span class="country-card-flag" aria-hidden="true">🇦🇺</span><div class="country-card-copy"><h2>Австралия</h2><p>Столица: <strong>Канберра</strong></p><span class="country-region">Океания</span></div>
+    </article>
+<article class="country-card" data-region="Океания" data-search="фиджи сува океания">
+      <span class="country-card-flag" aria-hidden="true">🇫🇯</span><div class="country-card-copy"><h2>Фиджи</h2><p>Столица: <strong>Сува</strong></p><span class="country-region">Океания</span></div>
+    </article>
+<article class="country-card" data-region="Океания" data-search="кирибати южная тарава океания">
+      <span class="country-card-flag" aria-hidden="true">🇰🇮</span><div class="country-card-copy"><h2>Кирибати</h2><p>Столица: <strong>Южная Тарава</strong></p><span class="country-region">Океания</span></div>
+    </article>
+<article class="country-card" data-region="Океания" data-search="маршалловы острова маджуро океания">
+      <span class="country-card-flag" aria-hidden="true">🇲🇭</span><div class="country-card-copy"><h2>Маршалловы Острова</h2><p>Столица: <strong>Маджуро</strong></p><span class="country-region">Океания</span></div>
+    </article>
+<article class="country-card" data-region="Океания" data-search="микронезия паликир океания">
+      <span class="country-card-flag" aria-hidden="true">🇫🇲</span><div class="country-card-copy"><h2>Микронезия</h2><p>Столица: <strong>Паликир</strong></p><span class="country-region">Океания</span></div>
+    </article>
+<article class="country-card" data-region="Океания" data-search="науру ярен океания">
+      <span class="country-card-flag" aria-hidden="true">🇳🇷</span><div class="country-card-copy"><h2>Науру</h2><p>Столица: <strong>Ярен</strong></p><span class="country-region">Океания</span></div>
+    </article>
+<article class="country-card" data-region="Океания" data-search="новая зеландия веллингтон океания">
+      <span class="country-card-flag" aria-hidden="true">🇳🇿</span><div class="country-card-copy"><h2>Новая Зеландия</h2><p>Столица: <strong>Веллингтон</strong></p><span class="country-region">Океания</span></div>
+    </article>
+<article class="country-card" data-region="Океания" data-search="палау нгерулмуд океания">
+      <span class="country-card-flag" aria-hidden="true">🇵🇼</span><div class="country-card-copy"><h2>Палау</h2><p>Столица: <strong>Нгерулмуд</strong></p><span class="country-region">Океания</span></div>
+    </article>
+<article class="country-card" data-region="Океания" data-search="папуа — новая гвинея порт-морсби океания">
+      <span class="country-card-flag" aria-hidden="true">🇵🇬</span><div class="country-card-copy"><h2>Папуа — Новая Гвинея</h2><p>Столица: <strong>Порт-Морсби</strong></p><span class="country-region">Океания</span></div>
+    </article>
+<article class="country-card" data-region="Океания" data-search="самоа апиа океания">
+      <span class="country-card-flag" aria-hidden="true">🇼🇸</span><div class="country-card-copy"><h2>Самоа</h2><p>Столица: <strong>Апиа</strong></p><span class="country-region">Океания</span></div>
+    </article>
+<article class="country-card" data-region="Океания" data-search="соломоновы острова хониара океания">
+      <span class="country-card-flag" aria-hidden="true">🇸🇧</span><div class="country-card-copy"><h2>Соломоновы Острова</h2><p>Столица: <strong>Хониара</strong></p><span class="country-region">Океания</span></div>
+    </article>
+<article class="country-card" data-region="Океания" data-search="тонга нукуалофа океания">
+      <span class="country-card-flag" aria-hidden="true">🇹🇴</span><div class="country-card-copy"><h2>Тонга</h2><p>Столица: <strong>Нукуалофа</strong></p><span class="country-region">Океания</span></div>
+    </article>
+<article class="country-card" data-region="Океания" data-search="тувалу фунафути океания">
+      <span class="country-card-flag" aria-hidden="true">🇹🇻</span><div class="country-card-copy"><h2>Тувалу</h2><p>Столица: <strong>Фунафути</strong></p><span class="country-region">Океания</span></div>
+    </article>
+<article class="country-card" data-region="Океания" data-search="вануату порт-вила океания">
+      <span class="country-card-flag" aria-hidden="true">🇻🇺</span><div class="country-card-copy"><h2>Вануату</h2><p>Столица: <strong>Порт-Вила</strong></p><span class="country-region">Океания</span></div>
+    </article></div><p class="atlas-empty" id="atlasEmpty" hidden>Ничего не найдено. Попробуйте изменить запрос или регион.</p><p class="atlas-note">* Для отдельных территорий и стран с особым международным статусом названия столиц могут указываться по-разному.</p></section><section class="atlas-cta"><div class="container atlas-cta-inner"><div><p class="eyebrow">ГОТОВЫ К ОТКРЫТИЯМ?</p><h2>Следующая история начинается с билета</h2><p>Выберите направление и начните планировать своё путешествие.</p></div><a class="register-btn" href="flights.html">Найти билеты <span>→</span></a></div></section></main><footer class="site-footer"><div class="container footer-top"><a class="logo footer-logo" href="index.html"><span class="logo-mark">V</span> voyago</a><p>Открывайте мир в своём темпе.</p><div class="footer-links"><a href="destinations.html">Атлас путешествий</a><a href="stays.html">Жильё</a><a href="profile.html">Профиль</a></div></div><div class="container footer-bottom"><span>© 2026 Voyago. Демонстрационный проект.</span><span>Путешествия начинаются здесь.</span></div></footer></body></html>

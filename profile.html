@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Войдите или создайте демо-профиль Voyago.">
+  <title>Профиль — Voyago</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="js/profile.js" defer></script>
+</head>
+<body class="profile-page">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html" aria-label="Voyago — главная"><span class="logo-mark">V</span> voyago</a>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="index.html">Главная</a>
+        <a href="destinations.html">Все направления</a><a href="stays.html">Жильё</a><a href="flights.html">Авиабилеты</a><a href="cars.html">Аренда авто</a><a href="taxi.html">Такси</a><a class="active" href="profile.html">Профиль</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="menu-btn" id="menuBtn" aria-label="Открыть меню" aria-expanded="false">☰</button>
+        <a class="login-link" href="#login" id="headerLogin">Войти</a>
+        <a class="register-btn" href="#register" id="headerRegister">Регистрация</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container profile-main">
+    <div class="profile-layout">
+      <aside class="profile-sidebar">
+        <div class="profile-avatar" id="sidebarAvatar">V</div>
+        <h2 id="sidebarName">Гость Voyago</h2>
+        <p id="sidebarEmail">Создайте профиль для удобства</p>
+        <div class="profile-side-divider"></div>
+        <a class="profile-side-link selected" href="profile.html">◉ &nbsp; Мой профиль</a>
+        <a class="profile-side-link" href="#saved">♡ &nbsp; Сохранённые места</a>
+        <a class="profile-side-link" href="#trips">▤ &nbsp; Мои поездки</a>
+        <button class="profile-side-link logout-link" id="logoutBtn" type="button" hidden>↪ &nbsp; Выйти</button>
+      </aside>
+
+      <section class="profile-content">
+        <div class="profile-heading"><p class="eyebrow dark">ВАШ VOYAGO</p><h1>Личный кабинет</h1><p>Управляйте профилем и готовьтесь к следующим путешествиям.</p></div>
+        <div class="demo-notice"><span>ⓘ</span><p><strong>Демонстрационный профиль.</strong> Данные сохраняются только в этом браузере. Не используйте настоящий пароль или личные данные: у сайта пока нет сервера и защищённой базы данных.</p></div>
+
+        <section class="profile-card" id="authCard">
+          <div class="auth-switch" role="tablist" aria-label="Вход или регистрация">
+            <button class="auth-tab active" id="registerTab" type="button" role="tab" aria-selected="true">Регистрация</button>
+            <button class="auth-tab" id="loginTab" type="button" role="tab" aria-selected="false">Войти</button>
+          </div>
+          <form class="auth-form" id="registerForm">
+            <h2>Создать аккаунт</h2><p class="form-intro">Зарегистрируйтесь, чтобы увидеть свой демо-профиль.</p>
+            <label for="regName">Ваше имя<input id="regName" name="name" type="text" placeholder="Например, Алексей" autocomplete="name" minlength="2" required></label>
+            <label for="regEmail">Электронная почта<input id="regEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required></label>
+            <label for="regPassword">Пароль<input id="regPassword" name="password" type="password" placeholder="Не менее 6 символов" autocomplete="new-password" minlength="6" required></label>
+            <label class="check-label"><input id="regTerms" type="checkbox" required> Я понимаю, что это демонстрационная регистрация без настоящего аккаунта.</label>
+            <button class="auth-submit" type="submit">Создать профиль <span>→</span></button>
+            <p class="form-footnote">Уже есть демо-профиль? Нажмите «Войти» выше.</p>
+          </form>
+          <form class="auth-form" id="loginForm" hidden>
+            <h2>С возвращением!</h2><p class="form-intro">Введите данные, которые использовали при регистрации в этом браузере.</p>
+            <label for="loginEmail">Электронная почта<input id="loginEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required></label>
+            <label for="loginPassword">Пароль<input id="loginPassword" name="password" type="password" placeholder="Ваш пароль" autocomplete="current-password" required></label>
+            <button class="auth-submit" type="submit">Войти в профиль <span>→</span></button>
+            <p class="form-footnote">Если вы ещё не регистрировались, выберите вкладку «Регистрация».</p>
+          </form>
+        </section>
+
+        <section class="profile-card account-card" id="accountCard" hidden>
+          <div class="account-card-top"><h2>Данные профиля</h2><span class="account-status">● Демо-аккаунт</span></div>
+          <div class="account-user"><div class="profile-avatar large" id="accountAvatar">V</div><div><h3 id="accountName">Пользователь</h3><p id="accountEmail">email@example.com</p></div></div>
+          <div class="account-info-row"><span>Имя</span><strong id="detailsName"></strong></div>
+          <div class="account-info-row"><span>Электронная почта</span><strong id="detailsEmail"></strong></div>
+          <button class="auth-submit edit-profile-btn" id="editBtn" type="button">Изменить данные <span>✎</span></button>
+          <form class="auth-form edit-form" id="editForm" hidden>
+            <label for="editName">Имя<input id="editName" type="text" minlength="2" required></label>
+            <label for="editEmail">Электронная почта<input id="editEmail" type="email" required></label>
+            <label for="editPassword">Новый пароль (необязательно)<input id="editPassword" type="password" minlength="6" autocomplete="new-password" placeholder="Оставьте пустым, чтобы не менять"></label>
+            <div class="edit-actions"><button class="auth-submit" type="submit">Сохранить изменения</button><button class="cancel-btn" id="cancelEdit" type="button">Отмена</button></div>
+          </form>
+        </section>
+
+        <div class="profile-lower-grid">
+          <article class="profile-mini-card" id="saved"><div class="mini-card-icon">♡</div><h3>Сохранённые места</h3><p>Здесь будут отображаться места, которые вы захотите сохранить для будущих поездок.</p><a href="index.html#destinations">Посмотреть направления →</a></article>
+          <article class="profile-mini-card" id="trips"><div class="mini-card-icon">✈</div><h3>Мои поездки</h3><p>Когда подключим бронирование, здесь появится история ваших путешествий.</p><a href="index.html#booking">Найти поездку →</a></article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-bottom"><span>© 2026 Voyago. Демонстрационный сайт.</span><span>Путешествия начинаются с мечты.</span></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    document.getElementById('headerLogin').addEventListener('click', () => { document.getElementById('loginTab').click(); });
+    document.getElementById('headerRegister').addEventListener('click', () => { document.getElementById('registerTab').click(); });
+    if (location.hash === '#login') document.getElementById('loginTab').click();
+    if (location.hash === '#register') document.getElementById('registerTab').click();
+  </script>
+</body>
+</html>
