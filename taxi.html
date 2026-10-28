@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Voyago — такси и трансфер для вашего путешествия.">
+  <title>Такси и трансфер — Voyago</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body class="service-page">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html"><span class="logo-mark">V</span> voyago</a>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="index.html">Главная</a>
+        <a  href="stays.html">Жильё</a>
+        <a  href="flights.html">Авиабилеты</a>
+        <a  href="cars.html">Аренда авто</a>
+        <a class="active" href="taxi.html">Такси</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="currencyBtn" aria-label="Выбрать валюту">€ EUR</button>
+        <button class="menu-btn" id="menuBtn" aria-label="Открыть меню">☰</button>
+        <a class="login-link" href="index.html#account">Войти</a>
+        <a class="register-btn" href="index.html#account">Регистрация</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="service-hero" style="--service-image:url('https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1800&q=85')">
+      <div class="service-hero-overlay"></div>
+      <div class="container service-hero-content">
+        <a class="back-link" href="index.html">← На главную</a>
+        <p class="eyebrow">ДОРОГА БЕЗ ЛИШНИХ ЗАБОТ</p>
+        <h1>Добирайтесь с комфортом</h1>
+        <p class="service-lead">Продумайте поездку из аэропорта, вокзала или по городу.</p>
+        <div class="booking-panel service-search-panel" id="booking">
+          <form class="search-form" id="searchForm" data-service="taxi">
+            <label class="search-field destination-field"><span class="field-icon">↗</span><span class="field-body">
+              <span class="field-label">Ваш маршрут</span><input id="destination" name="destination" placeholder="Адрес отправления — адрес прибытия" required></span></label>
+            <label class="search-field"><span class="field-icon">▦</span><span class="field-body"><span class="field-label">Дата и время</span>
+              <input id="dates" name="dates" type="text" placeholder="Выберите дату" onfocus="this.type='date'" required></span></label>
+            <label class="search-field guests-field"><span class="field-icon">♙</span><span class="field-body"><span class="field-label">Параметры</span>
+              <select id="guests" name="guests"><option>1–3 пассажира</option><option>4–6 пассажиров</option><option>7–8 пассажиров</option></select></span></label>
+            <button class="search-btn" type="submit">Найти</button>
+          </form>
+          <p class="search-note">Заполните поля, чтобы подготовить поиск. Бронирование пока работает в демонстрационном режиме.</p>
+        </div>
+      </div>
+    </section>
+    <section class="container section">
+      <div class="section-heading"><div><p class="eyebrow dark">VOYAGO ПОМОЖЕТ</p><h2>Выберите подходящий вариант</h2>
+      <p class="section-description">Планируйте поездку под свои предпочтения и бюджет.</p></div></div>
+      <div class="feature-grid"><article class="feature-card">
+          <div class="feature-icon">↗</div>
+          <h3>Трансфер из аэропорта</h3><p>Встреча и поездка до нужного адреса</p>
+        </article><article class="feature-card">
+          <div class="feature-icon">↗</div>
+          <h3>Поездки по городу</h3><p>Для дел и прогулок без парковки</p>
+        </article><article class="feature-card">
+          <div class="feature-icon">↗</div>
+          <h3>Минивэн</h3><p>Больше места для семьи и багажа</p>
+        </article></div>
+    </section>
+    <section class="soft-section"><div class="container section simple-cta">
+      <div><p class="eyebrow dark">ПРОДОЛЖИТЕ ПЛАНИРОВАНИЕ</p><h2>Всё для путешествия — в одном месте</h2><p class="section-description">Вернитесь на главную, чтобы вдохновиться популярными направлениями.</p></div>
+      <a class="register-btn" href="index.html">Посмотреть направления →</a>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-top"><a class="logo footer-logo" href="index.html"><span class="logo-mark">V</span> voyago</a><p>Открывайте мир в своём темпе.</p><div class="footer-links"><a href="index.html">Главная</a><a href="stays.html">Жильё</a><a href="flights.html">Авиабилеты</a><a href="cars.html">Аренда авто</a><a href="taxi.html">Такси</a></div></div><div class="container footer-bottom"><span>© 2026 Voyago. Демонстрационный сайт.</span><span>Путешествия начинаются с мечты.</span></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body></html>
